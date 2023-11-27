@@ -14,25 +14,25 @@ public class Game369 {
 			//10의 자리 3,6,9 갯수 체크
 		
 		
-//		for(int i = 1; i<=50; i++) {
-//			int a = i%10;
-//			int aa = i/10;
-//			
-//			if(a == 3 && aa == 3 || a == 6 && aa == 3 || a==9 && aa==3) {
-//				System.out.print("♥♥");
-//			}else if(a == 3 || a == 6|| a == 9) {
-//				System.out.print("♥");
-//			}else if(aa == 3 || aa == 6 || aa == 9) {
-//				System.out.print("♥");
-//			}else {
-//				System.out.print(i);
-//			}
-//			if(a == 0) {
-//				System.out.println();
-//			}
-//				System.out.print(" ");
-//				
-//		}
+		for(int i = 1; i<=50; i++) {
+			int a = i%10;
+			int aa = i/10;
+			
+			if(a == 3 && aa == 3 || a == 6 && aa == 3 || a==9 && aa==3) {
+				System.out.print("♥♥");
+			}else if(a == 3 || a == 6|| a == 9) {
+				System.out.print("♥");
+			}else if(aa == 3 || aa == 6 || aa == 9) {
+				System.out.print("♥");
+			}else {
+				System.out.print(i);
+			}
+			if(a == 0) {
+				System.out.println();
+			}
+				System.out.print(" ");
+				
+		}
 			//3,6,9 갯수 체크 변수
 			int cnt = 0;
 			//숫자 1~50 반복문
@@ -125,10 +125,7 @@ public class Game369 {
 				//입력숫자 > com -> down 하세요
 				// 입력숫자 < com -> up 하세요
 			
-			//for...
-			for(int i=0;i<1;i++) {
-				System.out.println("hhhhh");
-			}
+			
 			
 			
 			
