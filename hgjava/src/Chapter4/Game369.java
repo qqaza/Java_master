@@ -125,7 +125,10 @@ public class Game369 {
 				//입력숫자 > com -> down 하세요
 				// 입력숫자 < com -> up 하세요
 			
-			
+			//for...
+			for(int i=0;i<1;i++) {
+				System.out.println("hhhhh");
+			}
 			
 			
 			
