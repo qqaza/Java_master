@@ -1,15 +1,14 @@
 package Chapter6;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class BoardApp {
 
-	
 	public static void main(String[] args) {
 		
 		Board[] boards = new Board[100];
 	Scanner scn = new Scanner(System.in);
-	
+//	BoardExe exe = new BoardExe();
 	boolean run = true;
 	
 	while(run) {
@@ -20,41 +19,51 @@ public class BoardApp {
 		switch(menu) {
 		case 1:
 			System.out.println("게시글 번호>>>");
-			int num = scn.nextInt();
+			int num = Integer.parseInt(scn.nextLine());
 			System.out.println("제목>>>");
-			String tatle = scn.nextLine();
+			String title = scn.nextLine();
 			System.out.println("작성자>>>");
-			String name =  scn.nextLine();
+			String name = scn.nextLine();
 			System.out.println("내용>>>");
 			String memo = scn.nextLine();
 			System.out.println("작성일시>>>");
-			int time = scn.nextInt();
-			Board bod = new Board(num,tatle,name,memo,time);
+			String time = scn.nextLine();
+			//int time = Integer.parseInt(scn.nextLine());
+			Board bod = new Board(num, title, name, memo, time);
 			
 			
 			for(int i=0; i< boards.length; i++) {
 				if(boards[i] == null) {
 					boards[i]=bod;
-					break;
 				}
 				}
-			
+			    		break;
 		case 2://목록보기
-			for(int i=0; i<boards.length; i++) {
+			for(int i = 0; i < boards.length; i++) {
 				if(boards[i] != null) {
 					boards[i].showInfo();
 				}
+				break;
 			}
 		case 3://상세조회
+			System.out.println("조회");
+			num = scn.nextInt();
+//			for(int i=0; i<boards.length; i++) {
+//				if(boards[i] !=null && boards[i].getTitle().equals(title)) {
+//					boards[i].showInfo();
+//				}
+//		}
+			break;
 			
-			
-		case 4:
+		case 4://종료
+			System.out.println("프로그램을 종료합니다.");
+			run = false;
 			
 			
 		}//end of switch
 		
 	}//end of while
-
+	System.out.println("end of prog");
 	}//end of main
 
 }//end of class
