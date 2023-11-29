@@ -46,13 +46,13 @@ public class BoardApp {
 				break;
 			}
 		case 3://상세조회
-			System.out.println("조회");
-			num = scn.nextInt();
-//			for(int i=0; i<boards.length; i++) {
-//				if(boards[i] !=null && boards[i].getTitle().equals(title)) {
-//					boards[i].showInfo();
-//				}
-//		}
+			System.out.println("찾을 게시판 조회>>");
+			num = Integer.parseInt(scn.nextLine());
+			for(int i=0; i<boards.length; i++) {
+				if(boards[i] !=null && boards[i].getNum() == num) {
+					boards[i].showInfo();
+				}
+		}
 			break;
 			
 		case 4://종료
