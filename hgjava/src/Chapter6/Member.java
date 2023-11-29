@@ -10,6 +10,7 @@ public class Member {
 	private String phone; //010-1234-5678
 	private String gender; // Male or Female => M or F
 	
+	
 	//생성자: 필드의 초기값을 지정.
 	//기본생성자 -> 컴파일러가 생성.
 	Member(){
