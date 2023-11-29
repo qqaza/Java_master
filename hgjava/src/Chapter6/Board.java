@@ -11,7 +11,7 @@ public class Board {
 	 System.out.println("번호는 "+ num + "제목은 " + title + "작성자는 " + name + "내용은 " + memo + "작성일지는 " + time + "입니다.");
  }
 
-	
+	//나도 변경했습니다.
 
 void SetNum(int num) {
 	this.num = num;
