@@ -7,9 +7,7 @@ public class Member {
 	Member(String name, int age ){
 		this.name=name;
 		this.age=age;
-		
 	}
-	
 	//equals
 	@Override
 	public boolean equals(Object obj) {
@@ -22,7 +20,14 @@ public class Member {
 			}
 			return false;
 		}
-		
 		return super.equals(obj);
 	}
-}
+	@Override
+	public int hashCode() {
+		return this.name.hashCode();
+	}
+	@Override
+	public String toString() {
+		return "Member [name=" + name + ", age=" + age + "]";
+	}
+}//class
