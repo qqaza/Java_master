@@ -2,6 +2,12 @@ package Chap7.casting;
 
 public class MainExe {
 public static void main(String[] args) {
+	
+	double d1 = 100;
+	int n1 = (int) 100.0;
+	
+	
+	
 	//promotion.(자동으로 형변환)
 	Parent p1 = new Child();
 	
