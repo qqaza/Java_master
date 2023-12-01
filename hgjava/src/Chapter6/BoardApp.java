@@ -55,8 +55,18 @@ public class BoardApp {
 	}//end of boardList
 	
 	private void getBoard() {
-		System.out.println("찾을 게시판 조회>>");
-		int num = Integer.parseInt(scn.nextLine());
+		int num = 0;
+		while(true) {
+			System.out.println("찾을 게시판 조회>>");
+			try {
+				num = Integer.parseInt(scn.nextLine()); //<<<<에러발생
+				break;
+			}catch(NumberFormatException e) {
+				System.out.println("정확하게 입력ㄱㄱ");
+				
+			}
+		}
+		
 		Board result = BoardExe.getBoard(num);
 		if (result != null) {
 			System.out.println(result.showDetailInfo());
@@ -125,8 +135,14 @@ public class BoardApp {
 		while (run) {
 			System.out.println("1.등록 || 2.목록 || 3.상세조회 || 4.수정 || 5.삭제 || 6.종료");
 			System.out.print("입력>>>");
-			int menu = Integer.parseInt(scn.nextLine());
-
+			
+			int menu = 0;
+			try {
+			menu = Integer.parseInt(scn.nextLine());
+			}catch(NumberFormatException e) {
+				System.out.println("정확한 메뉴를 선택하세요.");
+				continue;
+			}
 			switch (menu) {
 			case 1: //글등록.
 				boardAdd();
