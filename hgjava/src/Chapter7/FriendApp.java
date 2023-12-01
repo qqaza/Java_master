@@ -90,26 +90,37 @@ public class FriendApp {
 	private static void getFriend() {
 		//이름조회, 연락처조회
 		System.out.println("1.이름 2.연락처");
+		
 		int submenu = Integer.parseInt(scn.nextLine());
 		String searchCond = "";
 		if(submenu==1) {
 			searchCond = scn.nextLine();
-			for(Friend fnd : storage) {
-				if(fnd !=null && fnd.getName().equals(searchCond)) {
-					System.out.println(fnd.showInfo());
-				}
+			Friend[]list = exe.searchFriend(searchCond);
+			for(int i=0; i<list.length;i++) {
+				if(list[i] !=null)
+					System.out.println(list[i].showInfo());
 			}
+//			for(Friend fnd : storage) {
+//				if(fnd !=null && fnd.getName().equals(searchCond)) {
+//					System.out.println(fnd.showInfo());
+//				}
+//			}
 		}else if(submenu==2) {
+			System.out.println("");
+		
 			searchCond = scn.nextLine();
-			for(Friend fnd : storage) {
-				if(fnd !=null && fnd.getPhone().equals(searchCond)) {
-					System.out.println(fnd.showInfo());
-				}
-			}
-		}else {
-			System.out.println("1또는 2 선택하세요.");
-		}
-	}// 조회.
+//			for(Friend fnd : storage) {
+//				if(fnd !=null && fnd.getPhone().equals(searchCond)) {
+//					System.out.println(fnd.showInfo());
+//				}
+//			}
+//		}else {
+			System.out.println(exe.searchPhone(searchCond).showInfo());
+//		}
+	} else {
+		System.out.println("1또는 2 중에서 선택하세요.");
+	}
+	}
 	
 	void backup() {
 		Friend parent = new Friend();

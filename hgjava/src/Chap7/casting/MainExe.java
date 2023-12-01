@@ -1,0 +1,29 @@
+package Chap7.casting;
+
+public class MainExe {
+public static void main(String[] args) {
+	//promotion.(자동으로 형변환)
+	Parent p1 = new Child();
+	
+	//casting. (강제로 형변환)
+	//Child c1 = (Child)new Parent();
+	
+	// 강제형변환 
+	//자식인스턴스는 강제형변환 OK.
+	//부모인스턴스는 강제형변환 NG.
+	// 에러: 컴파일에러/ 실행에러
+	Parent p2 = new Parent();
+	Child c2 = new Child();
+	
+	//p2 = c2;
+	//형변환전에 인스턴스 유형을 체크.
+	if(p2 instanceof Child) {
+		Child c3 = (Child) p2;
+	}
+	
+	System.out.println("end of prog.");
+	
+	
+	
+}//main
+}//class
