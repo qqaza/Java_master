@@ -1,10 +1,13 @@
 package Remind6;
 
 public class Student {
+	String studentNo; // student_name
 	String studentName;
-	String studentNo;
 	int eng;
 	int math;
+	Student(){
+		
+	}
 	void showInfo() {
 		System.out.println("이름은 "+ studentName + "영어는 " + eng + "수학은 " + math);
 	}
@@ -18,6 +21,10 @@ public class Student {
 	void SetMath(int math) {
 		this.math = math;
 	}
+	void setStudentNo(String studentNo) {
+		this.studentNo = studentNo;
+	}
+
 	String getStudentName() {
 		return studentName;
 	}

@@ -10,6 +10,7 @@ public class StudentApp {
 		
 		Scanner scn = new Scanner(System.in);
 		StudentExe exe = new StudentExe();
+		StudentDAO dao = new StudentDAO();
 		
 		boolean run = true;
 		
@@ -38,7 +39,7 @@ public class StudentApp {
 //						break;
 //				}
 //				}
-				if(exe.addStudent(std)) {
+				if(dao.addStudent(std)) {
 					System.out.println("저장되었습니다.");
 				}else {
 					System.out.println("저장 불가.");
@@ -52,7 +53,8 @@ public class StudentApp {
 //						students[i].showInfo();
 //					}
 //				}
-				for(Student st :exe.getStudentList()){
+				Student[] stdAry = dao.getStudentList();
+				for(Student st :stdAry){
 					if(st != null) {
 					st.showInfo();//Student[] 타입.
 				}
@@ -68,7 +70,7 @@ public class StudentApp {
 //						students[i].showInfo();
 //					}
 //				}
-				Student stnt = exe.getStudent(no);
+				Student stnt = dao.getStudent(no);
 				if(stnt != null) {
 					stnt.showInfo();
 				}else {
@@ -86,7 +88,7 @@ public class StudentApp {
 					eng = Integer.parseInt(scn.nextLine());
 					System.out.println("수학점수>>");
 					math = Integer.parseInt(scn.nextLine());
-					if(exe.modifytudent(no, eng, math)) {
+					if(dao.modifytudent(no, eng, math)) {
 						System.out.println("수정 완료.");
 					}else {
 						System.out.println("수정 실패.");
@@ -107,7 +109,7 @@ public class StudentApp {
 //						 
 //					}
 //					}
-				if(exe.removeStudent(name)) {
+				if(dao.removeStudent(name)) {
 					System.out.println("삭제 완료.");
 				}else {
 					System.out.println("삭제 실패.");
