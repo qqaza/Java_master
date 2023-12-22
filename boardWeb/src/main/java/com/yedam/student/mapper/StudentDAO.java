@@ -1,8 +1,10 @@
-package common;
+package com.yedam.student.mapper;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.yedam.student.vo.Student;
 
 //저장공간: ORACLE DB.
 

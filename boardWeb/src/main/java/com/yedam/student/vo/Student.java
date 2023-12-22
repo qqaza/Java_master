@@ -1,4 +1,4 @@
-package common;
+package com.yedam.student.vo;
 
 public class Student {
 	String studentNo; // student_name
@@ -6,7 +6,7 @@ public class Student {
 	int eng;
 	int math;
 
-	Student() {
+	public Student() {
 
 	}
 
