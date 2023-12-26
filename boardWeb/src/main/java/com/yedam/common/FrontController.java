@@ -22,6 +22,7 @@ import com.yedam.board.command.RemoveBoardControl;
 import com.yedam.board.command.RemoveFormControl;
 import com.yedam.member.command.LoginControl;
 import com.yedam.member.command.LoginFormControl;
+import com.yedam.member.command.LogoutControl;
 
 //@webServlet("*.do")
 
@@ -53,6 +54,8 @@ public class FrontController extends HttpServlet {
 		//회원관련.
 		map.put("/loginForm.do", new LoginFormControl());
 		map.put("/login.do", new LoginControl());
+		map.put("/logout.do", new LogoutControl());
+		
 	}
 
 	@Override
