@@ -2,8 +2,7 @@ package com.yedam.board.command;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,23 +19,23 @@ public class ModifyBoardControl implements Control {
 				String bno = req.getParameter("bno");
 				String content = req.getParameter("content");
 
-				BoardService svc = new BoardServiceMybatis();
 				BoardVO vo = new BoardVO();
-				vo.setContent(content);
 				vo.setBoardNo(Integer.parseInt(bno));
-				// 페이지 이동.
+				vo.setContent(content);
+				BoardService svc = new BoardServiceMybatis();
+				// svc.modBoard(): BoardVO인수, boolean 반환
 				if(svc.modBoard(vo)) {
+					//수정 성공시 상세보기 페이지로 이동
 					try {
-						resp.sendRedirect("boardList.do");
+						resp.sendRedirect("getBoard.do?bno=" + bno);
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}else {
 					try {
-						resp.sendRedirect("boardForm.do");
+						//등록 실패시 수정 페이지로 이동
+						resp.sendRedirect("modifyForm.do");
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}

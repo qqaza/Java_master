@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../layout/menu.jsp"%>
-<%@ include file="../layout/nav.jsp"%>
+
 
 <%
 String msg = (String) request.getAttribute("message");
@@ -27,9 +26,11 @@ if (msg != null) {%>
 				<td><input type="password" name="pw"></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="submit" value="로그인"
-					class="btn btn-primary"> <input type="reset" value="초기화"
-					class="btn btn-warning"></td>
+				<td colspan="2" align="center">
+				<input type="submit" value="로그인"class="btn btn-primary">
+					 <input type="reset" value="초기화"class="btn btn-warning">
+					
+					</td>
 			</tr>
 		</tbody>
 
@@ -37,4 +38,3 @@ if (msg != null) {%>
 </form>
 
 
-<%@ include file="../layout/foot.jsp"%>

@@ -16,15 +16,14 @@ public class ModifyFormControl implements Control {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
-		// 글번호 조회.
+		// 한건 찾기:  GetBoardControl과 동일
 		String bno = req.getParameter("bno");
 
 		BoardService svc = new BoardServiceMybatis();
 		BoardVO vo = svc.getBoard(Integer.parseInt(bno));
 
 		req.setAttribute("vo", vo);
-		// 페이지 이동.
-		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/board/modBoardForm.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("board/modBoardForm.tiles");
 
 		try {
 			rd.forward(req, resp);

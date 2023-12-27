@@ -41,7 +41,7 @@ public class AddBoardControl implements Control {
 			MultipartRequest mr = null;
 			
 			try {
-				mr = new MultipartRequest(req, saveLoc, maxSize, "utf-8",new DefaultFileRenamePolicy() );
+				mr = new MultipartRequest(req, saveLoc, maxSize, "utf-8", new DefaultFileRenamePolicy());
 				String title = mr.getParameter("title");
 				String content = mr.getParameter("content");
 				String writer = mr.getParameter("writer");
@@ -52,22 +52,23 @@ public class AddBoardControl implements Control {
 				vo.setWriter(writer);
 				vo.setImage(image);
 				
-			} catch (Exception e) {
+			} catch (IOException e) {
 				e.printStackTrace();
+			}	
 			}
 			BoardService svc = new BoardServiceMybatis();
 			try {
-				boolean add = svc.addBoard(vo);
+
 				
-				if (add) {
+				if (svc.addBoard(vo)) {
 					resp.sendRedirect("boardList.do");
 				}else {
 					resp.sendRedirect("boardForm.do");
 				}
-			} catch (Exception e) {
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}
+		
 	}// execute
 
 }

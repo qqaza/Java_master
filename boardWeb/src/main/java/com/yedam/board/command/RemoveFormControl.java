@@ -23,8 +23,7 @@ public class RemoveFormControl implements Control {
 		BoardVO vo = svc.getBoard(Integer.parseInt(bno));
 
 		req.setAttribute("vo", vo);
-		// 페이지 이동.
-		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/board/remBoardForm.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("board/remBoardForm.tiles");
 
 		try {
 			rd.forward(req, resp);

@@ -4,8 +4,7 @@
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 	
-<jsp:include page="../layout/menu.jsp"/>
-<jsp:include page="../layout/nav.jsp"/>
+
 
 
 
@@ -64,4 +63,3 @@
 	</form>
 	<br>
 	<a href="boardList.do">글 목록으로 가기</a>
-<jsp:include page="../layout/foot.jsp"/>

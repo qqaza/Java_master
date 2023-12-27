@@ -16,20 +16,22 @@ public class RemoveBoardControl implements Control {
 		// param("bno") - 삭제 - 목록.
 		String bno = req.getParameter("bno");
 		BoardService svc = new BoardServiceMybatis();
-
-		if (svc.remBoard(Integer.parseInt(bno))) {
+		
+		if(svc.remBoard(Integer.parseInt(bno))) {
 			try {
 				resp.sendRedirect("boardList.do");
-			} catch (IOException e) {
+			}catch(IOException e) {
 				e.printStackTrace();
 			}
-		} else {
+		}else {
 			try {
-				resp.sendRedirect("removeForm.do");
-			} catch (IOException e) {
+				resp.sendRedirect("getBoard.do?bno=" + bno);
+			}catch(IOException e) {
 				e.printStackTrace();
 			}
 		}
-	}
 
-}
+//			
+	}//end of execute
+
+}//end of class
