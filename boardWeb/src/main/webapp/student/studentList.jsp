@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>StudentList.jsp</title>
+<title>studentList.jsp</title>
 </head>
 <body>
 

@@ -1,16 +1,11 @@
-<%@page import="java.util.List"%>
-<%@page import="com.yedam.board.vo.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ include file="../layout/menu.jsp"%>
-<%@ include file="../layout/nav.jsp"%>
 
 
 <h3>게시판</h3>
-<!-- EL(Expression Language) -->
+
 
 <table class="table">
 	<thead>
@@ -37,5 +32,4 @@
 	</tbody>
 
 </table>
-<%@ include file="../layout/foot.jsp"%>
 

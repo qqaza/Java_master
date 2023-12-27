@@ -14,7 +14,7 @@ public class BoardFormControl implements Control {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// 등록화면 open.
-		RequestDispatcher rd = req.getRequestDispatcher("WEB-INF/board/addBoardForm.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("board/boardForm.tiles");
 
 		try {
 			rd.forward(req, resp);
