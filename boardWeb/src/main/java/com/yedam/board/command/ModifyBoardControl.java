@@ -27,7 +27,7 @@ public class ModifyBoardControl implements Control {
 				// 페이지 이동.
 				if(svc.modBoard(vo)) {
 					try {
-						resp.sendRedirect("BoardList.do");
+						resp.sendRedirect("boardList.do");
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

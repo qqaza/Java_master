@@ -12,7 +12,7 @@ if (msg != null) {%>
 <p><%= msg%></p>
 <%}%>
 
-<form action="login.do">
+<form action="login.do" method="post">
 	<table class="table">
 		<tbody>
 			<tr>
