@@ -15,7 +15,6 @@
         <link href="css/styles.css" rel="stylesheet"/>
     </head>
     <body>
-    <p>changed</p>
         <div class="d-flex" id="wrapper">
             <!-- Sidebar menu.jsp-->
             <tiles:insertAttribute name="menu"/>

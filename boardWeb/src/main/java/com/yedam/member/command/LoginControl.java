@@ -32,6 +32,9 @@ public class LoginControl implements Control {
 			session.setAttribute("logid", vo.getId()); //세션객체에 로그인아이디 값을 저장.
 			session.setAttribute("logName", vo.getName());
 			
+			//세션권한지정.
+			session.setAttribute("responsibilitity", vo.getResponsibilitity());
+			
 			try {
 				resp.sendRedirect("boardList.do");
 			} catch (IOException e) {

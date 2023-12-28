@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-
 <%
 String msg = (String) request.getAttribute("message");
 %>
@@ -27,8 +26,8 @@ if (msg != null) {%>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
-				<input type="submit" value="로그인"class="btn btn-primary">
-					 <input type="reset" value="초기화"class="btn btn-warning">
+				<input type="submit" value="로그인" class="btn btn-primary">
+					 <input type="reset" value="초기화" class="btn btn-warning">
 					
 					</td>
 			</tr>
@@ -36,5 +35,4 @@ if (msg != null) {%>
 
 	</table>
 </form>
-
 
