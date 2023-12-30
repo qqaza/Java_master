@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable.html</title>
+</head>
+<body>
+    <p>Hello</p>
+
+    <script>
+        //var: 함수레벨 - 괄호 상관없이 마지막에 입력된 변수의 값이 나옴,  let, const: block(중괄호 블럭) 레벨. 괄호 안과 밖이 구분되어서 나옴
+        var name =  'Hwang';
+        function myfunc()
+        {
+            var name = 'Hong';
+            console.log(name);
+            console.log(this);
+        }
+        myfunc()
+        console.log(name);
+
+        let age = 20;
+        // function myfunc2()
+        {
+            let age = 22;
+            console.log(age);
+        }
+        // myfunc2();
+        console.log(age);
+        let obj = {
+            id : 'Hong',
+            age: 20,
+            show: function(){
+                console.log(this);
+            }
+        }
+        obj.show();
+
+        document.body.addEventListener('click', function(){
+            console.log(this);
+        })
+        //this의 성질.
+        //1.전역영역: window 객체.
+        //2.함수: window 객체.
+        //3.객체: object
+        //4.이벤트: 이벤트가 실행되는 대상.
+        // console.log(this);
+
+            //같은변수 (show)를 2번 선언해서 오류남.
+        // let show = 'Hello';
+        // function show(){
+        //     console.log('show');
+        // }
+            //() => 괄호가 함수를 실행하겠다는 의미로 쓰인다.
+        let show = function(){
+            console.log('show');
+            //return 값을 안넣어주면 undefined가 나오고 반환값을 적어주면 반환값이 나옴.
+            //return undefined;
+            return '반환값';
+        }
+        console.log(show());
+        //함수를 괄호로 묶어서 실행가능함.
+        (function(){
+            console.log('익명함수');
+        })();
+        
+
+        //함수명명 규칙. 
+        function showMyName(){
+            console.log('홍길동');
+        }
+
+        //상수선언. 상수에 새로운 값을 넣는것은 오류, 값을 변경하는건 괜찮.
+        const height = 167.9;
+        // height = 167;
+        
+        const friend = {
+            name: '홍길동',
+            phone: '010-1111'
+        }
+        friend.phone = '010-2222';
+
+       // friend = {}
+        
+    </script>
+</body>
+</html>
